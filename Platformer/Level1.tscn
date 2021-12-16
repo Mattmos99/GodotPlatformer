@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 351, 31 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="Block1" type="RigidBody2D" parent="."]
+position = Vector2( 511, 199 )
+rotation = -0.570456
+gravity_scale = 12.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Block1"]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block1"]
+shape = SubResource( 1 )
+
+[node name="Block2" type="RigidBody2D" parent="."]
+position = Vector2( 404, 180 )
+rotation = -0.570456
+gravity_scale = 12.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Block2"]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block2"]
+shape = SubResource( 1 )
+
+[node name="Block3" type="RigidBody2D" parent="."]
+position = Vector2( 607, 168 )
+rotation = -0.570456
+gravity_scale = 12.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Block3"]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block3"]
+shape = SubResource( 1 )
+
+[node name="Block4" type="RigidBody2D" parent="."]
+position = Vector2( 507, 98 )
+rotation = -0.570456
+gravity_scale = 12.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Block4"]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block4"]
+shape = SubResource( 1 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2( 521, 424 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor"]
+scale = Vector2( 11, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource( 2 )
