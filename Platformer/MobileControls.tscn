@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/PNG/HUD/transparentDark22.png" type="Texture" id=1]
+[ext_resource path="res://Assets/PNG/HUD/transparentDark24.png" type="Texture" id=2]
+[ext_resource path="res://Assets/PNG/HUD/transparentDark23.png" type="Texture" id=3]
+
+[node name="MobileControls" type="CanvasLayer"]
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2( 32, 448 )
+scale = Vector2( 1.6, 1.6 )
+normal = ExtResource( 1 )
+passby_press = true
+action = "left"
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2( 224, 448 )
+scale = Vector2( 1.6, 1.6 )
+normal = ExtResource( 3 )
+passby_press = true
+action = "right"
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+position = Vector2( 864, 448 )
+scale = Vector2( 1.6, 1.6 )
+normal = ExtResource( 2 )
+action = "jump"

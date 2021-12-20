@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Steve.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://HUD.gd" type="Script" id=9]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/music/Retro Beat.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Assets/PNG/HUD/transparentDark33.png" type="Texture" id=12]
+[ext_resource path="res://MobileControls.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 193, 32 )
@@ -104,6 +106,7 @@ motion_scale = Vector2( 0.7, 0.7 )
 motion_mirroring = Vector2( 1120, 840 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Nearby Blocks"]
+show_behind_parent = true
 scale = Vector2( 1.75, 1.75 )
 texture = ExtResource( 5 )
 centered = false
@@ -166,6 +169,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button" type="Button" parent="HUD"]
+margin_left = 928.0
+margin_top = 32.0
+margin_right = 988.0
+margin_bottom = 86.0
+icon = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MobileControls" parent="HUD/Button" instance=ExtResource( 13 )]
+
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource( 6 )]
@@ -210,6 +225,7 @@ volume_db = -12.0
 autoplay = true
 
 [connection signal="body_entered" from="FallZone" to="Steve" method="_on_FallZone_body_entered"]
+[connection signal="pressed" from="HUD/Button" to="HUD" method="_on_Button_pressed"]
 [connection signal="coin_collected" from="Coins/Coin" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected"]
