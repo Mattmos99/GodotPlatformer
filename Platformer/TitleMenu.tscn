@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/fonts/KiriFont.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/PNG/UI/Arrow_Right_Key_Light.png" type="Texture" id=7]
 [ext_resource path="res://Assets/PNG/Coin/gold_1.png" type="Texture" id=8]
 [ext_resource path="res://PlayButton.gd" type="Script" id=9]
+[ext_resource path="res://Assets/music/Swinging Pants.ogg" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -247,5 +248,10 @@ script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TitleScreenMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]

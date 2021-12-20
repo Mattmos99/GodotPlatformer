@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/PNG/Enemies/slimeBlue_blue.png" type="Texture" id=2]
 [ext_resource path="res://Assets/PNG/Enemies/slimeBlue.png" type="Texture" id=3]
 [ext_resource path="res://Assets/PNG/Enemies/slimeBlue_squashed.png" type="Texture" id=4]
+[ext_resource path="res://Assets/sounds/pepSound2.ogg" type="AudioStream" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -65,6 +66,10 @@ shape = SubResource( 4 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="SoundSquashed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -2.0
 
 [connection signal="body_entered" from="top_checker" to="." method="_on_top_checker_body_entered"]
 [connection signal="body_entered" from="sides_checker" to="." method="_on_Area2D_body_entered"]
