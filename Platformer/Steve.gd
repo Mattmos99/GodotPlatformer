@@ -35,7 +35,7 @@ func _physics_process(delta):
 
 
 func _on_FallZone_body_entered(body):
-	get_tree().change_scene("res://Level1.tscn")
+	get_tree().change_scene("res://Gameover.tscn")
 
 
 func bounce():
@@ -56,4 +56,4 @@ func ouch(var enemyposx):
 
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://Level1.tscn")
+	get_tree().change_scene("res://Gameover.tscn")

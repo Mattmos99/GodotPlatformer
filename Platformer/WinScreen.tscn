@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/fonts/KiriFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://MainMenuButton.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 131
+outline_size = 8
+outline_color = Color( 0.980392, 0.960784, 0.0862745, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 34
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="WinScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.172549, 0.996078, 0.937255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 864.0
+margin_bottom = 260.0
+custom_colors/font_color = Color( 0.792157, 0.576471, 0.243137, 1 )
+custom_colors/font_outline_modulate = Color( 0.890196, 0.882353, 0.262745, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "YOU WIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuButton" type="Button" parent="."]
+margin_left = 384.0
+margin_top = 320.0
+margin_right = 640.0
+margin_bottom = 416.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.870588, 0.815686, 0.141176, 1 )
+custom_colors/font_color_pressed = Color( 0.67451, 0.670588, 0.152941, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Main Menu"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="MainMenuButton" to="MainMenuButton" method="_on_MainMenuButton_pressed"]
